@@ -9,7 +9,7 @@
 <body>
 
 <h3>Welcome <%=request.getParameter("uname") %></h3>
-<pre>
+<ul>
 <%
 String value = request.getParameter("number");
 try
@@ -17,7 +17,9 @@ try
 	Integer number = Integer.parseInt(value);
 	for(int i=1;i<=10;i++)
 	{
+		out.println("<li id='" + i + "'>"  );
 		out.println(number + " * " + i +" = " + (number*i)  );
+		out.println("</li>"  );
 	}
 }
 catch(NumberFormatException e)
@@ -25,7 +27,7 @@ catch(NumberFormatException e)
 	out.println("Invalid number");
 }
 %>
-<pre>
+</ul>
 <br/>
 <br/>
 <p>&copy 2016 Preetham</p>
